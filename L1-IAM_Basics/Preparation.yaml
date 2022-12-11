@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create S3 bucket and IAM Group for Lab purpose.
+
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: weauditlab1
+
+  IAMLabGroup:
+    Type: AWS::IAM::Group
+    Properties:
+      GroupName: S3-LogAudit
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+
+
+
+Outputs:
+  BucketName:
+    Value: !Ref 'S3Bucket'
+    Description: Name of the created Bucket
+  IAMGroupName:
+    Value: !Ref 'IAMLabGroup'
+    Description: Name of the created IAM Group
