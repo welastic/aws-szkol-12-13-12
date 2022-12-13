@@ -70,17 +70,17 @@ aws ecr create-repository --repository-name studentXmario
 26. Click on **View push commands**. 
 27. To retrieve an authentication token and authenticate your Docker client to your registry. Paste first command in your EC2 terminal. 
 ```she
-aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 536966783968.dkr.ecr.eu-west-1.amazonaws.com
+aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 399816924347.dkr.ecr.eu-west-1.amazonaws.com
 ```
 28. Go back to AWS console.
 29. To push image to repository you have to tag it. Paste third comand in your EC2 terminal and rename name of docker image as in example bellow. 
 ```she
-docker tag kaminskypavel/mario:latest 536966783968.dkr.ecr.eu-west-1.amazonaws.com/studentXmario:latest
+docker tag kaminskypavel/mario:latest 399816924347.dkr.ecr.eu-west-1.amazonaws.com/studentXmario:latest
 ```
 
 30. Copy fourth command to your EC2 terminal, and run this command to push your docker image to AWS ECR repostory. 
 ```she
-docker push 536966783968.dkr.ecr.eu-west-1.amazonaws.com/studentXmario:latest
+docker push 399816924347.dkr.ecr.eu-west-1.amazonaws.com/studentXmario:latest
 ```
 
 31. Go back to AWS console and check if your image is present in ECR repository. 
@@ -117,7 +117,7 @@ In this section, you will create and run task that will spin up our docker conta
 5. Provide following information: 
 
 * **Container name**: studentX_container
-* **Image**: 536966783968.dkr.ecr.eu-west-1.amazonaws.com/studentXmario:latest
+* **Image**: 399816924347.dkr.ecr.eu-west-1.amazonaws.com/studentXmario:latest
 * **Port mappings:** 8080
 
 6.  Rest of the container configuration leave default and click **Add**. 
